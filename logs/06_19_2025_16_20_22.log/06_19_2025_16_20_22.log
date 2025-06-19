@@ -1,0 +1,9 @@
+[ 2025-06-19 16:20:22,864 ] 162 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[ 2025-06-19 16:20:26,584 ] 99 root - INFO - Starting the Flask application
+[ 2025-06-19 16:20:26,629 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-06-19 16:20:26,644 ] 97 werkzeug - INFO -  * Debugger PIN: 363-983-110
+[ 2025-06-19 16:20:27,045 ] 71 root - INFO - Received POST request for prediction
+[ 2025-06-19 16:20:27,053 ] 55 root - INFO - Dataframe Gathered
+[ 2025-06-19 16:20:27,192 ] 97 werkzeug - INFO -  * Detected change in 'C:\\Users\\HP\\AppData\\Roaming\\Python\\Python310\\site-packages\\sklearn\\base.py', reloading
+[ 2025-06-19 16:20:27,698 ] 92 root - INFO - Prediction result: The Product NOT Went on Backorder.
+[ 2025-06-19 16:20:27,961 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:20:27] "POST /predict HTTP/1.1" 200 -

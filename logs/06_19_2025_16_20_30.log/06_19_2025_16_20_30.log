@@ -1,0 +1,48 @@
+[ 2025-06-19 16:20:30,856 ] 162 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[ 2025-06-19 16:20:35,110 ] 99 root - INFO - Starting the Flask application
+[ 2025-06-19 16:20:35,142 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-06-19 16:20:35,151 ] 97 werkzeug - INFO -  * Debugger PIN: 363-983-110
+[ 2025-06-19 16:20:35,359 ] 26 root - INFO - Accessing index page
+[ 2025-06-19 16:20:35,545 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:20:35] "GET / HTTP/1.1" 200 -
+[ 2025-06-19 16:20:56,609 ] 26 root - INFO - Accessing index page
+[ 2025-06-19 16:20:56,734 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:20:56] "GET / HTTP/1.1" 200 -
+[ 2025-06-19 16:21:00,252 ] 62 root - INFO - Accessing train_model page
+[ 2025-06-19 16:21:00,272 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:21:00] "GET /train_custom_data HTTP/1.1" 200 -
+[ 2025-06-19 16:21:04,232 ] 32 root - INFO - Received POST request for training custom data
+[ 2025-06-19 16:21:04,451 ] 48 root - INFO - File saved: uploads\Temp_data_1.csv
+[ 2025-06-19 16:21:04,451 ] 25 root - INFO - Data Ingestion method start
+[ 2025-06-19 16:21:04,875 ] 44 root - INFO - Data Ingestion competed
+[ 2025-06-19 16:21:04,933 ] 45 root - INFO - Data Ingestion competed train data 
+   national_inv  lead_time  in_transit_qty  ...  stop_auto_buy  rev_stop  went_on_backorder
+0           103        8.0               6  ...            Yes        No                 No
+1           634       52.0               5  ...            Yes        No                 No
+2           240        8.0               0  ...             No        No                 No
+3          1501        2.0             962  ...            Yes        No                 No
+4            22        NaN               0  ...            Yes        No                 No
+
+[5 rows x 22 columns]
+[ 2025-06-19 16:21:04,967 ] 47 root - INFO - Data Ingestion competed test data 
+   national_inv  lead_time  in_transit_qty  ...  stop_auto_buy  rev_stop  went_on_backorder
+0             6        NaN               0  ...            Yes        No                 No
+1             1       12.0               0  ...            Yes        No                 No
+2            10       12.0               0  ...            Yes        No                 No
+3             6        3.0               0  ...            Yes        No                 No
+4            10        NaN               0  ...            Yes        No                 No
+
+[5 rows x 22 columns]
+[ 2025-06-19 16:21:04,972 ] 41 root - INFO - initiate Data Tranfermation
+[ 2025-06-19 16:21:05,145 ] 27 root - INFO - Data Tranfermation piple start
+[ 2025-06-19 16:21:05,160 ] 91 root - INFO - Applying preprocessing object on training and testing datasets.
+[ 2025-06-19 16:21:05,162 ] 28 root - INFO - Splitting Dependent and Independent variables from train and test data
+[ 2025-06-19 16:21:05,757 ] 48 root - INFO - Model Report : {'RandomForestClassifier': 0.7222222222222222, 'DecisionTreeClassifier': 0.6363636363636364, 'SGDClassifier': 0.7126436781609194, 'KNeighborsClassifier': 0.6567164179104478, 'GradientBoostingClassifier': 0.6865671641791046}
+[ 2025-06-19 16:21:05,758 ] 59 root - INFO - Best Model Found , Model Name : RandomForestClassifier , Accuary is : 72.22
+[ 2025-06-19 16:21:05,767 ] 52 root - INFO - Training pipeline initiated successfully
+[ 2025-06-19 16:21:05,771 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:21:05] "POST /train_custom_data HTTP/1.1" 200 -
+[ 2025-06-19 16:21:08,946 ] 62 root - INFO - Accessing train_model page
+[ 2025-06-19 16:21:08,947 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:21:08] "GET /train_custom_data HTTP/1.1" 200 -
+[ 2025-06-19 16:21:11,727 ] 68 root - INFO - Accessing prediction form
+[ 2025-06-19 16:21:11,795 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:21:11] "GET /predict HTTP/1.1" 200 -
+[ 2025-06-19 16:21:24,748 ] 71 root - INFO - Received POST request for prediction
+[ 2025-06-19 16:21:24,756 ] 55 root - INFO - Dataframe Gathered
+[ 2025-06-19 16:21:24,840 ] 92 root - INFO - Prediction result: The Product NOT Went on Backorder.
+[ 2025-06-19 16:21:24,841 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:21:24] "POST /predict HTTP/1.1" 200 -

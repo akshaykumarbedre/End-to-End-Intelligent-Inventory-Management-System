@@ -1,0 +1,9 @@
+[ 2025-06-19 16:20:16,001 ] 162 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[ 2025-06-19 16:20:19,934 ] 99 root - INFO - Starting the Flask application
+[ 2025-06-19 16:20:21,070 ] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.196.36:5000
+[ 2025-06-19 16:20:21,070 ] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2025-06-19 16:20:21,135 ] 97 werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+[ 2025-06-19 16:20:29,160 ] 97 werkzeug - INFO -  * Restarting with watchdog (windowsapi)
