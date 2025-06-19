@@ -11,14 +11,14 @@ Watch the complete project walkthrough and demonstration: [Project Demo Video](h
 ## 📸 Screenshots
 
 **Custom Training Interface:**
-![Custom Training](artifacts\custom_data_training.png)
+![Custom Training](artifacts/custom_data_training.png)
 
 **Model Prediction Interface:**
-![Model Prediction](artifacts\predictiing.png)
+![Model Prediction](artifacts/predictiing.png)
 
 ## 🏗️ Project Architecture
 
-![Architecture of ML Project](artifacts\Architure.png)
+![Architecture of ML Project](artifacts/Architure.png)
 
 ## 📊 Features
 
