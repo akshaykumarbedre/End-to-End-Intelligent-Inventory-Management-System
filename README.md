@@ -1,133 +1,233 @@
-# Enterprise Product Backorder Prediction System
+# End-to-End Intelligent Inventory Management System
 
-## 🎯 Project Impact & Business Value
-This production-ready machine learning system achieves:
-- **Reduced Stockouts**: Proactively predicts potential backorders with high accuracy
-- **Inventory Optimization**: Enables data-driven inventory management decisions
-- **Cost Reduction**: Minimizes excess inventory holding costs while maintaining service levels
-- **Improved Customer Satisfaction**: Helps maintain optimal stock levels for consistent product availability
+## Overview
 
-## 🔑 Key Technical Achievements
-- Implemented a scalable ML pipeline using industry-standard practices
-- Achieved 89% prediction accuracy using ensemble learning techniques
-- Built a production-ready system with robust error handling and logging
-- Developed RESTful API endpoints for seamless integration
-- Implemented automated model selection and hyperparameter tuning
-- Created comprehensive unit tests and documentation
+This project implements an intelligent backorder prediction system using machine learning to help businesses manage their inventory effectively. The system predicts whether a product will go on backorder based on various inventory and sales features, enabling proactive inventory management decisions.
 
-## 🛠️ Technical Stack & Skills Demonstrated
+## 🎥 Video Demonstration
 
-### Programming & Frameworks
-- **Python 3.10**: Advanced OOP concepts, type hints, decorators
-- **scikit-learn**: ML pipeline development, model evaluation
-- **pandas & numpy**: Complex data manipulation and analysis
-- **Flask**: RESTful API development and web services
-- **Git**: Version control and collaborative development
+Watch the complete project walkthrough and demonstration: [Project Demo Video](https://drive.google.com/file/d/1f4eqkmgzdNJIQ5Jb0jjTKxPAS4P_SvgB/view?usp=sharing)
 
-### Machine Learning
-- Feature engineering and selection
-- Model evaluation and selection
-- Hyperparameter tuning
-- Handling imbalanced datasets
-- Cross-validation techniques
+## 📸 Screenshots
 
-### Software Engineering Best Practices
-- Modular, maintainable code architecture
-- Comprehensive error handling
-- Detailed logging system
-- Code documentation
-- CI/CD principles
+**Custom Training Interface:**
+![Custom Training](artifacts\custom_data_training.png)
 
-## 🏗️ System Architecture
-```
-src/
-├── components/          # Core ML Components
-│   ├── data_ingestion.py     # Data loading and splitting
-│   ├── data_transformation.py # Feature engineering
-│   └── model_trainer.py      # Model training and evaluation
-├── pipelines/          # Pipeline Orchestration
-│   ├── prediction_pipeline.py # Real-time prediction
-│   └── training_pipeline.py   # Model training workflow
-└── utils/             # Shared Utilities
-    ├── exception.py   # Custom exception handling
-    ├── logger.py      # Logging configuration
-    └── utils.py       # Helper functions
-```
+**Model Prediction Interface:**
+![Model Prediction](artifacts\predictiing.png)
 
-## 💻 Implementation Highlights
+## 🏗️ Project Architecture
 
-### Advanced Data Processing
-```python
-def data_transformation(self):
-    """
-    Implements sophisticated data preprocessing pipeline:
-    - Handles missing values using domain-specific logic
-    - Removes outliers using statistical methods
-    - Performs feature scaling and encoding
-    - Implements data balancing techniques
-    """
-```
+![Architecture of ML Project](artifacts\Architure.png)
 
-### Model Training & Selection
-```python
-def model_trainer(self):
-    """
-    Implements ensemble of models including:
-    - Random Forest
-    - Gradient Boosting
-    - Deep Learning
-    
-    Automated model selection based on:
-    - F1 Score
-    - Cross-validation results
-    - Business metrics
-    """
-```
+## 📊 Features
 
-## 🚀 Setup & Deployment
+- **Data Ingestion**: Automated data loading and preprocessing from CSV files
+- **Data Transformation**: Advanced preprocessing including outlier removal, missing value handling, and feature scaling
+- **Model Training**: Multiple algorithm comparison (Random Forest, Decision Tree, SGD, KNN, Gradient Boosting)
+- **Custom Data Training**: Upload your own dataset for model training
+- **Real-time Predictions**: Web interface for individual product backorder predictions
+- **Model Persistence**: Automated model and preprocessor saving/loading
 
-### Quick Start
+## 🔧 Key Components
+
+### Core Modules
+
+1. **`src/logger.py`**: Comprehensive logging system with timestamped log files
+2. **`src/exception.py`**: Custom exception handling for better error management
+3. **`src/utils.py`**: Utility functions for:
+   - Object serialization/deserialization
+   - Outlier removal using 3-sigma rule
+   - Target column encoding (Yes/No → 1/0)
+
+### Data Pipeline
+
+4. **`src/components/data_ingestion.py`**: 
+   - Handles CSV data loading
+   - Automated train-test split
+   - Configurable data paths
+
+5. **`src/components/data_transformation.py`**: 
+   - Missing value imputation using median strategy
+   - Feature scaling with StandardScaler
+   - Data balancing using resampling techniques
+   - Outlier removal for both training and test data
+
+6. **`src/components/model_trainer.py`**: 
+   - Multi-algorithm evaluation framework
+   - F1-score based model selection
+   - Automated best model selection and persistence
+
+### Prediction System
+
+7. **`src/pipelines/prediction_pipeline.py`**: 
+   - Real-time prediction interface
+   - Custom data input handling
+   - Model loading and inference
+
+8. **`src/pipelines/training_pipeline.py`**: 
+   - End-to-end training orchestration
+   - Pipeline coordination between components
+
+### Web Application
+
+9. **`app.py`**: Flask web application with:
+   - Custom dataset upload and training
+   - Individual prediction interface
+   - File upload validation
+   - Error handling and user feedback
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.7 or higher
+- Required packages listed in `requirements.txt`
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd End-to-End-Intelligent-Inventory-Management-System
+   ```
+
+2. **Create virtual environment**
+   ```bash
+   conda create -n inventory_system python=3.7
+   conda activate inventory_system
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+### Usage
+
+#### Web Application
 ```bash
-# Clone repository
-git clone https://github.com/yourusername/backorder-prediction.git
-
-# Setup virtual environment
-python -m venv venv
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run application
 python app.py
 ```
+Access the application at `http://localhost:5000`
 
+#### Training Pipeline (Programmatic)
+```python
+from src.pipelines.training_pipeline import Training_Pipeline
 
-## 🎓 Professional Development
-This project demonstrates expertise in:
-- Production-level machine learning systems
-- Scalable software architecture
-- API development and integration
-- Data preprocessing and feature engineering
-- Model deployment and monitoring
-- Documentation and testing
+# Train with default dataset
+pipeline = Training_Pipeline()
+result = pipeline.initiate_training_pipeline()
 
+# Train with custom dataset
+pipeline = Training_Pipeline("path/to/your/data.csv")
+result = pipeline.initiate_training_pipeline()
+```
 
-## 📚 Future Enhancements
-- Implementation of A/B testing framework
-- Integration with cloud services (AWS/Azure/GCP)
-- Real-time model monitoring and retraining
-- Enhanced API documentation using Swagger
-- Performance optimization using distributed computing
+#### Making Predictions
+```python
+from src.pipelines.prediction_pipeline import CustomData, PredictPipeline
 
-## 🤝 Professional Experience Gained
-- End-to-end ML project development
-- Production system deployment
-- API design and development
-- Data pipeline architecture
-- Performance optimization
-- Technical documentation
-- Version control and collaboration
+# Create prediction data
+data = CustomData(
+    national_inv=24.0,
+    lead_time=8.0,
+    in_transit_qty=0.0,
+    forecast_3_month=3456.0,
+    sales_1_month=10.0,
+    min_bank=7.0,
+    perf_6_month_avg=1.0
+)
+
+# Make prediction
+pipeline = PredictPipeline()
+df = data.get_data_as_dataframe()
+prediction = pipeline.predict(df)
+```
+
+## 📋 Input Features
+
+The model uses the following features for prediction:
+
+- **`national_inv`**: National inventory level
+- **`lead_time`**: Lead time for product delivery
+- **`in_transit_qty`**: Quantity currently in transit
+- **`forecast_3_month`**: 3-month sales forecast
+- **`sales_1_month`**: Previous month sales
+- **`min_bank`**: Minimum recommended stock level
+- **`perf_6_month_avg`**: 6-month average performance
+
+## 🤖 Supported Algorithms
+
+- Random Forest Classifier
+- Decision Tree Classifier
+- Stochastic Gradient Descent (SGD) Classifier
+- K-Nearest Neighbors (KNN) Classifier
+- Gradient Boosting Classifier
+
+The system automatically selects the best performing model based on F1-score.
+
+## 📁 Project Structure
+
+```
+├── src/
+│   ├── components/
+│   │   ├── data_ingestion.py
+│   │   ├── data_transformation.py
+│   │   └── model_trainer.py
+│   ├── pipelines/
+│   │   ├── training_pipeline.py
+│   │   └── prediction_pipeline.py
+│   ├── logger.py
+│   ├── exception.py
+│   └── utils.py
+├── notebooks/
+│   └── back_order_predict.ipynb
+├── artifacts/           # Generated models and preprocessors
+├── uploads/            # User uploaded datasets
+├── templates/          # HTML templates
+├── app.py             # Flask web application
+├── requirements.txt
+└── README.md
+```
+
+## ☁️ Deployment
+
+This application was previously deployed on AWS (Amazon Web Services), leveraging its robust, scalable, and reliable infrastructure. However, the deployment is currently not active.
+
+**Note: The application is not currently deployed on AWS.**
+
+## 🔍 Data Analysis
+
+The project includes a comprehensive Jupyter notebook (`notebooks/back_order_predict.ipynb`) with:
+- Exploratory Data Analysis (EDA)
+- Data preprocessing steps
+- Model experimentation
+- Feature correlation analysis
+
+## ⚠️ Important Notes
+
+- Ensure all data files follow the expected schema with required columns
+- The system handles class imbalance through resampling techniques
+- Models are automatically saved in the `artifacts/` directory
+- All exceptions are logged with detailed information for debugging
+
+## 🚀 Future Enhancements
+
+- Advanced feature engineering
+- Hyperparameter tuning for better model performance
+- Real-time data pipeline integration
+- Advanced visualization dashboard
+- API endpoints for system integration
+
+## 🤝 Contributing
+
+Feel free to contribute to this project by:
+- Reporting bugs
+- Suggesting new features
+- Improving documentation
+- Submitting pull requests
 
 ---
-*This project was developed with a focus on industry best practices and enterprise-ready solutions. Open to opportunities and collaborations in Machine Learning Engineering and Data Science roles.*
+
+**Happy Coding!** 🎉

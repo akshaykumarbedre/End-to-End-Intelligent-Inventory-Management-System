@@ -1,0 +1,103 @@
+[ 2025-06-19 15:50:43,231 ] 162 numexpr.utils - INFO - NumExpr defaulting to 4 threads.
+[ 2025-06-19 15:50:51,251 ] 99 root - INFO - Starting the Flask application
+[ 2025-06-19 15:50:51,307 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-06-19 15:50:51,329 ] 97 werkzeug - INFO -  * Debugger PIN: 363-983-110
+[ 2025-06-19 15:51:06,780 ] 26 root - INFO - Accessing index page
+[ 2025-06-19 15:51:06,795 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 15:51:06] "GET / HTTP/1.1" 200 -
+[ 2025-06-19 15:51:15,008 ] 68 root - INFO - Accessing prediction form
+[ 2025-06-19 15:51:15,020 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 15:51:15] "GET /predict HTTP/1.1" 200 -
+[ 2025-06-19 15:51:19,960 ] 62 root - INFO - Accessing train_model page
+[ 2025-06-19 15:51:19,974 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 15:51:19] "GET /train_custom_data HTTP/1.1" 200 -
+[ 2025-06-19 15:51:25,226 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 15:51:25] "GET /static/Temp_data.csv HTTP/1.1" 200 -
+[ 2025-06-19 15:51:53,098 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 15:51:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2025-06-19 15:55:23,914 ] 62 root - INFO - Accessing train_model page
+[ 2025-06-19 15:55:23,916 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 15:55:23] "GET /train_custom_data HTTP/1.1" 200 -
+[ 2025-06-19 15:55:24,437 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 15:55:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2025-06-19 15:55:32,372 ] 32 root - INFO - Received POST request for training custom data
+[ 2025-06-19 15:55:32,420 ] 48 root - INFO - File saved: uploads\Temp_data_1.csv
+[ 2025-06-19 15:55:32,420 ] 25 root - INFO - Data Ingestion method start
+[ 2025-06-19 15:55:33,088 ] 44 root - INFO - Data Ingestion competed
+[ 2025-06-19 15:55:33,190 ] 45 root - INFO - Data Ingestion competed train data 
+   national_inv  lead_time  in_transit_qty  forecast_3_month  ...  ppap_risk  stop_auto_buy  rev_stop  went_on_backorder
+0            51        4.0              12                40  ...         No            Yes        No                 No
+1            13        9.0               3                 1  ...         No            Yes        No                 No
+2            29       12.0              23                46  ...         No            Yes        No                 No
+3             0        NaN               0                 0  ...         No            Yes        No                 No
+4            13        4.0               0                 0  ...         No            Yes        No                 No
+
+[5 rows x 22 columns]
+[ 2025-06-19 15:55:33,255 ] 47 root - INFO - Data Ingestion competed test data 
+   national_inv  lead_time  in_transit_qty  forecast_3_month  ...  ppap_risk  stop_auto_buy  rev_stop  went_on_backorder
+0             4        4.0               0                 1  ...         No            Yes        No                 No
+1            43        8.0               0                57  ...         No            Yes        No                 No
+2           167        NaN               0                 0  ...         No            Yes        No                 No
+3            20       12.0               0                 0  ...         No            Yes        No                 No
+4            17        2.0               0                 0  ...        Yes            Yes        No                 No
+
+[5 rows x 22 columns]
+[ 2025-06-19 15:55:33,259 ] 41 root - INFO - initiate Data Tranfermation
+[ 2025-06-19 15:55:33,554 ] 27 root - INFO - Data Tranfermation piple start
+[ 2025-06-19 15:55:33,587 ] 91 root - INFO - Applying preprocessing object on training and testing datasets.
+[ 2025-06-19 15:55:33,597 ] 28 root - INFO - Splitting Dependent and Independent variables from train and test data
+[ 2025-06-19 15:55:34,762 ] 48 root - INFO - Model Report : {'RandomForestClassifier': 0.7435897435897436, 'DecisionTreeClassifier': 0.716417910447761, 'SGDClassifier': 0.7560975609756098, 'KNeighborsClassifier': 0.7027027027027027, 'GradientBoostingClassifier': 0.7887323943661972}
+[ 2025-06-19 15:55:34,812 ] 59 root - INFO - Best Model Found , Model Name : GradientBoostingClassifier , Accuary is : 78.87
+[ 2025-06-19 15:55:34,833 ] 52 root - INFO - Training pipeline initiated successfully
+[ 2025-06-19 15:55:34,837 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 15:55:34] "POST /train_custom_data HTTP/1.1" 200 -
+[ 2025-06-19 15:55:44,794 ] 62 root - INFO - Accessing train_model page
+[ 2025-06-19 15:55:44,795 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 15:55:44] "GET /train_custom_data HTTP/1.1" 200 -
+[ 2025-06-19 15:55:47,665 ] 68 root - INFO - Accessing prediction form
+[ 2025-06-19 15:55:47,668 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 15:55:47] "GET /predict HTTP/1.1" 200 -
+[ 2025-06-19 15:56:04,147 ] 71 root - INFO - Received POST request for prediction
+[ 2025-06-19 15:56:04,152 ] 55 root - INFO - Dataframe Gathered
+[ 2025-06-19 15:56:04,236 ] 92 root - INFO - Prediction result: The Product Went on Backorder.
+[ 2025-06-19 15:56:04,240 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 15:56:04] "POST /predict HTTP/1.1" 200 -
+[ 2025-06-19 16:00:34,672 ] 68 root - INFO - Accessing prediction form
+[ 2025-06-19 16:00:34,673 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:00:34] "GET /predict HTTP/1.1" 200 -
+[ 2025-06-19 16:03:43,093 ] 62 root - INFO - Accessing train_model page
+[ 2025-06-19 16:03:43,095 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:03:43] "GET /train_custom_data HTTP/1.1" 200 -
+[ 2025-06-19 16:03:51,256 ] 32 root - INFO - Received POST request for training custom data
+[ 2025-06-19 16:03:51,287 ] 48 root - INFO - File saved: uploads\Temp_data_1.csv
+[ 2025-06-19 16:03:51,288 ] 25 root - INFO - Data Ingestion method start
+[ 2025-06-19 16:03:51,765 ] 44 root - INFO - Data Ingestion competed
+[ 2025-06-19 16:03:51,810 ] 45 root - INFO - Data Ingestion competed train data 
+   national_inv  lead_time  in_transit_qty  forecast_3_month  ...  ppap_risk  stop_auto_buy  rev_stop  went_on_backorder
+0           152       14.0               0                 0  ...         No            Yes        No                 No
+1            15        8.0               0                 0  ...        Yes            Yes        No                 No
+2             6       12.0               0                 0  ...         No            Yes        No                 No
+3             0        4.0               0                 4  ...         No            Yes        No                 No
+4             0        2.0               0                21  ...        Yes            Yes        No                 No
+
+[5 rows x 22 columns]
+[ 2025-06-19 16:03:51,847 ] 47 root - INFO - Data Ingestion competed test data 
+   national_inv  lead_time  in_transit_qty  forecast_3_month  ...  ppap_risk  stop_auto_buy  rev_stop  went_on_backorder
+0            41        2.0               0                 0  ...         No            Yes        No                 No
+1             5        4.0               0                 0  ...         No            Yes        No                 No
+2             4        9.0               0                 0  ...         No            Yes        No                 No
+3            39        4.0               0                 0  ...        Yes            Yes        No                 No
+4           738        4.0             379               531  ...         No            Yes        No                 No
+
+[5 rows x 22 columns]
+[ 2025-06-19 16:03:51,850 ] 41 root - INFO - initiate Data Tranfermation
+[ 2025-06-19 16:03:52,008 ] 27 root - INFO - Data Tranfermation piple start
+[ 2025-06-19 16:03:52,026 ] 91 root - INFO - Applying preprocessing object on training and testing datasets.
+[ 2025-06-19 16:03:52,028 ] 28 root - INFO - Splitting Dependent and Independent variables from train and test data
+[ 2025-06-19 16:03:52,739 ] 48 root - INFO - Model Report : {'RandomForestClassifier': 0.7476635514018692, 'DecisionTreeClassifier': 0.7572815533980584, 'SGDClassifier': 0.7307692307692307, 'KNeighborsClassifier': 0.7200000000000001, 'GradientBoostingClassifier': 0.7289719626168225}
+[ 2025-06-19 16:03:52,740 ] 59 root - INFO - Best Model Found , Model Name : DecisionTreeClassifier , Accuary is : 75.73
+[ 2025-06-19 16:03:52,742 ] 52 root - INFO - Training pipeline initiated successfully
+[ 2025-06-19 16:03:52,743 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:03:52] "POST /train_custom_data HTTP/1.1" 200 -
+[ 2025-06-19 16:04:29,810 ] 62 root - INFO - Accessing train_model page
+[ 2025-06-19 16:04:29,811 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:04:29] "GET /train_custom_data HTTP/1.1" 200 -
+[ 2025-06-19 16:04:33,671 ] 68 root - INFO - Accessing prediction form
+[ 2025-06-19 16:04:33,673 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:04:33] "GET /predict HTTP/1.1" 200 -
+[ 2025-06-19 16:04:48,693 ] 71 root - INFO - Received POST request for prediction
+[ 2025-06-19 16:04:48,695 ] 55 root - INFO - Dataframe Gathered
+[ 2025-06-19 16:04:48,760 ] 92 root - INFO - Prediction result: The Product NOT Went on Backorder.
+[ 2025-06-19 16:04:48,761 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:04:48] "POST /predict HTTP/1.1" 200 -
+[ 2025-06-19 16:05:29,511 ] 71 root - INFO - Received POST request for prediction
+[ 2025-06-19 16:05:29,514 ] 55 root - INFO - Dataframe Gathered
+[ 2025-06-19 16:05:29,519 ] 92 root - INFO - Prediction result: The Product NOT Went on Backorder.
+[ 2025-06-19 16:05:29,519 ] 97 werkzeug - INFO - 127.0.0.1 - - [19/Jun/2025 16:05:29] "POST /predict HTTP/1.1" 200 -
+[ 2025-06-19 16:10:22,579 ] 97 werkzeug - INFO -  * Detected change in 'C:\\Users\\HP\\AppData\\Roaming\\Python\\Python310\\site-packages\\IPython\\display.py', reloading
+[ 2025-06-19 16:10:22,624 ] 97 werkzeug - INFO -  * Detected change in 'C:\\Users\\HP\\AppData\\Roaming\\Python\\Python310\\site-packages\\IPython\\core\\display_functions.py', reloading
+[ 2025-06-19 16:10:22,745 ] 97 werkzeug - INFO -  * Detected change in 'C:\\Users\\HP\\AppData\\Roaming\\Python\\Python310\\site-packages\\IPython\\lib\\display.py', reloading
+[ 2025-06-19 16:10:23,392 ] 97 werkzeug - INFO -  * Detected change in 'C:\\Users\\HP\\AppData\\Roaming\\Python\\Python310\\site-packages\\matplotlib\\typing.py', reloading
